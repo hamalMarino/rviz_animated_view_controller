@@ -8,10 +8,11 @@
   <arg unless="$(arg load_config)" name="command_args" value="" />
   <arg if="$(arg load_config)"     name="command_args" value="-d $(find rviz_animated_view_controller)/launch/demo.rviz" />
 
-  <node name="$(anon rviz)" launch-prefix="$(arg launch_prefix)" pkg="rviz" type="rviz" required="true"
+  <!-- <node name="$(anon rviz)" launch-prefix="$(arg launch_prefix)" pkg="rviz" type="rviz" required="true"
         respawn="false" output="screen" args="$(arg command_args)">
-  </node>
+  </node> -->
 
-  <node name="$(anon camera_test)" pkg="view_controller_msgs" type="SquareTest" output="screen" />
+  <!-- <node name="$(anon camera_test)" pkg="view_controller_msgs" type="SquareTest" output="screen" /> -->
+  <node name="$(anon camera_test)" pkg="view_controller_msgs" type="MoveCameraFactory.py" output="screen" />
 
 </launch>
